@@ -14,27 +14,27 @@ public class BuscarAlunoPorAutocorrecao {
 
 	// Resolucao sem o uso de jpql
 	
+//	public static void main(String[] args) {
+//		
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicio");
+//		EntityManager em = emf.createEntityManager();
+//		
+//		Autocorrecao autocorrecao = em.find(Autocorrecao.class, 1L);
+//		Resposta resposta = em.find(Resposta.class, autocorrecao.getRespota());
+//		System.out.println(resposta.getAluno());
+//		
+//		em.close();
+//		
+//	}
+	
+	// Resolucao com jpql
+	
 	public static void main(String[] args) {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicio");
 		EntityManager em = emf.createEntityManager();
 		
-		Autocorrecao autocorrecao = em.find(Autocorrecao.class, 2L);
-		Resposta resposta = em.find(Resposta.class, autocorrecao.getRespota());
-		System.out.println(resposta.getAluno());
-		
-		em.close();
-		
-	}
-	
-	// Resolucao com jpql
-	
-	public static void main2(String[] args) {
-		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicio");
-		EntityManager em = emf.createEntityManager();
-		
-		Autocorrecao autocorrecao = em.find(Autocorrecao.class, 5L);
+		Autocorrecao autocorrecao = em.find(Autocorrecao.class, 1L);
 		
 		String jpql = "select r from Resposta r where r.id = :pAutocorrecao";
 		TypedQuery<Resposta> query = em.createQuery(jpql, Resposta.class);

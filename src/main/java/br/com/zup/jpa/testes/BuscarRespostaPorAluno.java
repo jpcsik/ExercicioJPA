@@ -17,7 +17,7 @@ public class BuscarRespostaPorAluno {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicio");
 		EntityManager em = emf.createEntityManager();
 		
-		Aluno aluno = em.find(Aluno.class, 3L);
+		Aluno aluno = em.find(Aluno.class, 1L);
 		
 		String jpql ="select r from Resposta r where r.aluno = :pAluno";
 		TypedQuery<Resposta> query = em.createQuery(jpql, Resposta.class);
