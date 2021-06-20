@@ -44,5 +44,7 @@ public class BuscarAlunoPorAutocorrecao {
 		for (Resposta resposta : resultList) {
 			System.out.println(resposta.getAluno());
 		}
+		
+		em.close();
 	}
 }

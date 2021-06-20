@@ -27,7 +27,8 @@ public class BuscarRespostaPorAluno {
 		for (Resposta resposta : resultList) {
 			System.out.println(resposta.getSolucao());
 		}
-	
+		
+		em.close();
 	}
 	
 }
