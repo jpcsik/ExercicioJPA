@@ -19,7 +19,7 @@ public class BuscarRespostaPorAluno {
 		
 		Aluno aluno = em.find(Aluno.class, 1L);
 		
-		String jpql ="select r from Resposta r where r.aluno = :pAluno";
+		String jpql ="select r from Resposta r join fetch r.avaliacao where r.aluno = :pAluno";
 		TypedQuery<Resposta> query = em.createQuery(jpql, Resposta.class);
 		query.setParameter("pAluno", aluno);
 		
